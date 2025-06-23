@@ -3,7 +3,7 @@ import { useUndoState } from '../../UndoContent';
 import Config from '../Icons/globe.svg';
 import Upload from '../Icons/cloudup.svg';
 import Terminal from '../Icons/codeline.svg';
-import Chain from '../Icons/link.svg';
+import Chain from '../Icons/Link.svg';
 import Search from '../Icons/glassincircle.svg';
 import Table from '../Icons/table.svg';
 import Stack from '../Icons/squaresround.svg';

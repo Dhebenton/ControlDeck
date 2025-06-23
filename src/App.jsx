@@ -4,6 +4,7 @@ import Navigation from './navigation/Navigation'
 import Search from './search/Search'
 import Panel from './panel/Panel'
 import Menu from './menu/Menu'
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   const [ searchOpen, setSearchOpen ] = useState(false) 
@@ -55,6 +56,7 @@ function App() {
             />
         </div>
       </div>
+      <SpeedInsights />
     </>
   )
 }

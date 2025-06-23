@@ -1,0 +1,201 @@
+:root {
+  --accent: hsl(11, 79%, 57%);
+  --accent-bg: hsl(11, 79%, 57%, 0.1);
+  --accent-outline: hsl(11, 79%, 57%, 0.2);
+  --text-muted: #737373;
+  --text-light: #B7B7B7;
+  --bg-dark: #141414;
+  --bg-darker: #0F0F0F;
+  --bg-darkest: #171717;
+  --border-light: hsl(0, 0%, 100%, 0.02);
+  --border-strong: hsl(0, 0%, 100%, 0.05);
+  --scrollbar-thumb: hsl(0, 0%, 100%, 0.2);
+  --scrollbar-thumb-hover: hsl(0, 0%, 100%, 0.4);
+  --transition-fast: 0.3s ease;
+  --transition-fade: 0.2s ease;
+}
+
+/* ========================================================
+  SEARCH BAR
+======================================================== */
+.search-bar {
+  background-color: var(--bg-dark);
+  padding: 12px;
+  border-radius: 7px;
+  height: 41px;
+  color: #424242;
+  font-variation-settings: 'wght' 500;
+  font-size: 13px;
+  position: relative;
+}
+
+.search-bar:hover {
+  background-color: #1B1B1B;
+  color: var(--text-muted);
+}
+
+.s-key-icons {
+  position: absolute;
+  right: 12px;
+}
+
+.search-bar img {
+  opacity: 0.5;
+}
+
+.search-bar:hover img {
+  opacity: 1;
+}
+
+/* ========================================================
+  SEARCH MENU
+======================================================== */
+.search-background-blur {
+  position: absolute;
+  inset: 0;
+  background-color: hsl(0, 0%, 100%, 0.01);
+  z-index: 50;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 1;
+  transition: opacity var(--transition-fade);
+}
+
+.search-background-blur.animate {
+  opacity: 0;
+}
+
+.search-menu {
+  position: absolute;
+  background-color: var(--bg-darkest);
+  width: 670px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 51;
+  border: 1px solid var(--border-light);
+  border-radius: 24px;
+  padding: 4px;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.2),
+    0 4px 6px 0 rgba(0, 0, 0, 0.06);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  opacity: 1;
+}
+
+.search-menu.animate {
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+}
+
+.search-input-wrap,
+.search-bottom {
+  padding: 12px 14px;
+}
+
+.search-input-wrap img {
+  opacity: 0.7;
+}
+
+.search-input {
+  color: white;
+  font-size: 13px;
+  font-variation-settings: 'wght' 450;
+  margin-top: -1px;
+  width: 100%;
+  caret-color: white;
+}
+
+.search-input::placeholder {
+  color: #575757;
+}
+
+.search-block {
+  background-color: var(--bg-darker);
+  flex: 1;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-tab-wrap {
+  overflow-y: auto;
+  max-height: 40vh;
+  flex: 1;
+  margin: 16px 6px;
+  padding-right: 4px;
+}
+
+.search-tab-wrap::-webkit-scrollbar {
+  background-color: var(--border-light);
+  width: 5px;
+  border-radius: 50px;
+}
+
+.search-tab-wrap::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 50px;
+}
+
+.search-tab-wrap::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+.search-tab-wrap > :first-child {
+  padding: 0 14px 16px 14px;
+}
+
+.search-tab-wrap > :last-child {
+  padding: 16px 14px 0 14px;
+  border-bottom: none;
+}
+
+.search-tab-col {
+  padding: 16px 0 16px 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.search-tab-heading {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-variation-settings: 'wght' 550;
+  padding-bottom: 10px;
+}
+
+.search-bottom {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-variation-settings: 'wght' 550;
+  border-top: 1px solid var(--border-strong);
+}
+
+/* ========================================================
+  SEARCH TAB
+======================================================== */
+.search-tab {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 12px;
+  padding: 12px 14px;
+  color: var(--text-light);
+  font-size: 13px;
+  font-variation-settings: 'wght' 500;
+  border: 1px solid transparent;
+  outline: 3px solid transparent;
+  border-radius: 6px;
+}
+
+.search-tab img {
+  opacity: 0.7;
+}
+
+.search-tab:is(:hover, :focus) {
+  background-color: var(--accent-bg);
+  color: white;
+  border-color: var(--accent);
+  outline-color: var(--accent-outline);
+}
+
+.search-tab:is(:hover, :focus) img {
+  opacity: 1;
+}

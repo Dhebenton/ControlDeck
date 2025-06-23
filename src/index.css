@@ -1,0 +1,253 @@
+/* ========================================================
+  GLOBAL STYLES
+======================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "inter-variable", sans-serif;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  caret-color: transparent;
+  text-align: left;
+}
+
+#root {
+  background-color: #0F0F0F;
+  width: 100vw;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+*:focus {
+  outline: none;
+  caret-color: transparent;
+}
+
+input,
+button {
+  background-color: transparent;
+  border: none;
+  stroke: none;
+  transition: all ease-out .2s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ========================================================
+  FLEX
+======================================================== */
+
+.f-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.f-row {
+  display: flex;
+  align-items: center;
+}
+
+.g52 {
+  gap: 52px;
+}
+
+.g40 {
+  gap: 40px;
+}
+
+.g32 {
+  gap: 32px;
+}
+
+.g20 {
+  gap: 20px;
+}
+
+.g12 {
+  gap: 12px;
+}
+
+.g8 {
+  gap: 8px;
+}
+
+.g6 {
+  gap: 6px;
+}
+
+.g4 {
+  gap: 4px;
+}
+
+.g2 {
+  gap: 2px;
+}
+
+
+
+.spread {
+  justify-content: space-between;
+}
+
+
+.j-f-e {
+  justify-content: flex-end;
+}
+
+.j-f-s {
+  justify-content: flex-start;
+}
+
+.a-f-e {
+  align-items: flex-end;
+}
+
+/* ========================================================
+  BUTTONS
+======================================================== */
+
+button {
+  transform: color ease .2s, opacity ease .2s background-color ease .2s;
+}
+
+button img {
+  transition: opacity ease .2s;
+}
+
+
+/* ========================================================
+  BUTTON MAIN
+======================================================== */
+
+.button-main {
+  position: relative;
+  background-color: hsl(0, 0%, 100%, .04);
+  border-radius: 6px;
+  z-index: 0;
+  font-size: 14px;
+  font-variation-settings: 'wght' 480;
+  color: #BABABA;
+  padding: 10px 14px;
+}
+
+.button-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.15));
+  border-radius: inherit;
+  padding: 1px;
+  opacity: .1;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  transition: opacity .2s ease;
+}
+
+
+.button-main:hover {
+  background-color: hsl(0, 0%, 100%, .08);
+  counter-reset: white;
+}
+
+.button-main:hover::before {
+  opacity: .5;
+}
+
+.button-main img {
+  opacity: .7;
+}
+
+.button-main:hover img {
+  opacity: 1;
+}
+
+
+
+/* ========================================================
+  BUTTON MAIN GREEN
+======================================================== */
+
+.button-main.green {
+  background-color: #1B8E37;
+  color: #D1E8D7;
+}
+
+.button-main.green::before {
+  opacity: .6;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.25));
+}
+
+.button-main.green img {
+  opacity: .8;
+}
+
+.button-main.green:hover {
+  background-color: #20A241;
+  color: white;
+}
+
+.button-main.green:hover img {
+  opacity: 1;
+}
+
+.button-main.green:hover::before {
+  opacity: 1;
+}
+
+/* ========================================================
+  BUTTON MAIN ICONS
+======================================================== */
+
+
+.button-main.icon {
+  padding: 0;
+  min-width: 34px;
+  min-height: 34px;
+}
+
+/* ========================================================
+  TRANSPARENT BUTTONS
+======================================================== */
+
+.transparent-button {
+  min-width: 27px;
+  min-height: 27px;
+  border-radius: 5px;
+  opacity: .7;
+}
+
+.transparent-button:hover {
+  background-color: hsl(0, 0%, 100%, .15);
+  opacity: 1;
+}
+
+
+/* ========================================================
+  DASHBOARD LAYOUT
+======================================================== */
+
+.dashboard-whole-wrap {
+  background-color: #1C1C1C;
+  flex: 1;
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.dashboard-menu-wrap {
+  flex: 1;
+  height: 100%;
+}

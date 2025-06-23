@@ -1,0 +1,95 @@
+/* ========================================================
+  PANEL
+======================================================== */
+
+.panel {
+    width: 240px;
+    height: 100%;
+    background-color: #121212;
+    padding: 20px 0;
+    position: relative;
+    transition: width ease .4s;
+}
+
+.panel.closed {
+    width: 0px;
+}
+
+.panel > div {
+    min-width: 240px;
+    padding: 0 20px;
+}
+
+.panel-block {
+    color: #FAFAFA;
+    font-size: 16px;
+    font-variation-settings: 'wght' 500;
+}
+
+.panel-heading {
+    font-size: 12px;
+    font-variation-settings: 'wght' 600;
+    color: #515151;
+    margin-bottom: 16px;
+}
+
+
+/* ========================================================
+  TAB
+======================================================== */
+
+.panel-tab {
+    color: #4D4D4D;
+    font-size: 12px;
+    font-variation-settings: 'wght' 500;
+    height: 36px;
+    position: relative;
+    margin: 1px;
+    background-color: #121212;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 15px 1fr;
+    gap: 10px;
+    padding: 0px 10px;
+    border-radius: 6px;
+}
+
+.panel-tab.back-to {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+} 
+
+.panel-tab::before {
+  border-radius: 7px;
+}
+
+
+.panel-tab img {
+    opacity: .5;
+    margin-top: -1px;
+}
+
+.panel-tab:hover {
+    background-color: hsl(0, 0%, 100%, .02);
+    color: #6C6C6D;
+}
+
+.panel-tab:hover img {
+    opacity: .6;
+}
+
+.panel-tab.active {
+    background-color: hsl(0, 0%, 100%, .03);
+    color: #A5A5A6;
+}
+
+.panel-tab.active img {
+    opacity: 1;
+}
+
+.panel-tab.active::before {
+    opacity: .1;
+}
+

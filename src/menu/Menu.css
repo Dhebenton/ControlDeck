@@ -1,0 +1,34 @@
+.menu {
+    padding: 20px 28px;
+    border-bottom: 1px solid hsl(0, 0%, 100%, .04);
+    position: relative;
+}
+
+.menu-block {
+    position: absolute;
+    left: 28px;
+}
+
+.menu-button-wrap {
+    overflow: hidden;
+    width: 51px;
+    transition: width ease .3s;
+}
+
+.menu-button-wrap button {
+    margin-right: 24px;
+}
+
+.menu-icon {
+    margin-right: 12px;
+}
+
+.menu-heading {
+    font-size: 19px;
+    font-variation-settings: 'wght' 550;
+    color: #FAFAFA;
+}
+
+.menu-button-wrap.closed {
+    width: 0px;
+}

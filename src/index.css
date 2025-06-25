@@ -40,11 +40,24 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  white-space: nowrap;
+}
+
+/* ========================================================
+  PADDING
+======================================================== */
+
+.p-b8 {
+  padding-bottom: 8px;
 }
 
 /* ========================================================
   FLEX
 ======================================================== */
+
+.flex {
+  flex: 1;
+}
 
 .f-col {
   display: flex;
@@ -64,12 +77,24 @@ button {
   gap: 40px;
 }
 
+.g36 {
+  gap: 36px;
+}
+
 .g32 {
   gap: 32px;
 }
 
+.g24 {
+  gap: 24px;
+}
+
 .g20 {
   gap: 20px;
+}
+
+.g16 {
+  gap: 16px;
 }
 
 .g12 {
@@ -146,7 +171,7 @@ button img {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.15));
+  background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
   border-radius: inherit;
   padding: 1px;
   opacity: .1;
@@ -164,7 +189,7 @@ button img {
 }
 
 .button-main:hover::before {
-  opacity: .5;
+  opacity: .3;
 }
 
 .button-main img {
@@ -176,6 +201,13 @@ button img {
 }
 
 
+/* ========================================================
+  BUTTON MAIN ATRIBUTES
+======================================================== */
+
+.button-main.circle {
+  border-radius: 50px;
+}
 
 /* ========================================================
   BUTTON MAIN GREEN
@@ -186,9 +218,10 @@ button img {
   color: #D1E8D7;
 }
 
+.button-main.orange::before,
 .button-main.green::before {
-  opacity: .6;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.25));
+  opacity: .25;
+  background: linear-gradient(to bottom, rgb(255,255,255, .8), rgb(0,0,0));
 }
 
 .button-main.green img {
@@ -200,13 +233,30 @@ button img {
   color: white;
 }
 
+.button-main.orange:hover,
 .button-main.green:hover img {
   opacity: 1;
 }
 
+.button-main.orange:hover::before,
 .button-main.green:hover::before {
-  opacity: 1;
+  opacity: .4;
 }
+
+
+/* ========================================================
+  BUTTON MAIN ORANGE
+======================================================== */
+
+.button-main.orange {
+  background-color: #CA492B;
+  color: #F1DAD5;
+}
+
+.button-main.orange:hover {
+  background-color: #F65028;
+}
+
 
 /* ========================================================
   BUTTON MAIN ICONS
@@ -231,7 +281,7 @@ button img {
 }
 
 .transparent-button:hover {
-  background-color: hsl(0, 0%, 100%, .15);
+  background-color: hsl(0, 0%, 80%, .1);
   opacity: 1;
 }
 
@@ -241,7 +291,7 @@ button img {
 ======================================================== */
 
 .dashboard-whole-wrap {
-  background-color: #1C1C1C;
+  background-color: #151515;
   flex: 1;
   border-radius: 26px;
   overflow: hidden;
@@ -250,4 +300,11 @@ button img {
 .dashboard-menu-wrap {
   flex: 1;
   height: 100%;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.dashboard-menu-wrap::-webkit-scrollbar {
+  background-color: transparent;
 }

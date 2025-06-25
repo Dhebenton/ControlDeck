@@ -9,6 +9,7 @@ import LockOpen from '../Icons/lockopen.svg';
 import Logs from '../Icons/logs.svg';
 import ShieldWarning from '../Icons/shieldwarning.svg';
 import Gear from '../Icons/gear.svg';
+import Bolt from '../Icons/bolt.svg'
 
 function Security() {
     const { state, set } = useUndoState();
@@ -17,6 +18,7 @@ function Security() {
     const networkSecurity = [
         { id: 'Firewall Settings', icon: ShieldCheck },
         { id: 'SSL/TLS', icon: Lock },
+        { id: 'DDoS Protection', icon: Bolt },
     ];
 
     const authentication = [

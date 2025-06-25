@@ -15,7 +15,7 @@ function Atri({}) {
     const panelTab = state.panelTab;
 
     const categories = [
-        {id: 'Atri Chat ', icon: ChatBubble},
+        {id: 'Atri Chat', icon: ChatBubble},
         {id: "Site Performance", icon: Chart},
         {id: "Conversion Insights", icon: Funnel},
         {id: "SEO Health Check", icon: Glass}

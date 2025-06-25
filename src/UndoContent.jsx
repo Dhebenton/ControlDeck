@@ -5,8 +5,8 @@ const UndoContext = createContext(null);
 
 export const UndoProvider = ({ children }) => {
   const [history, { set, undo, redo }] = useUndo({
-    tab: 'Dashboard',
-    panelTab: 'Dashboard',
+    tab: 'Security',
+    panelTab: 'Security',
   });
 
   return (

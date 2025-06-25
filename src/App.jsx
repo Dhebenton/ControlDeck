@@ -5,6 +5,7 @@ import Search from './search/Search'
 import Panel from './panel/Panel'
 import Menu from './menu/Menu'
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import Content from './content/Content'
 
 function App() {
   const [ searchOpen, setSearchOpen ] = useState(false) 
@@ -54,6 +55,7 @@ function App() {
               menuClosed={menuClosed}
               handlePanelClose={handlePanelClose}
             />
+            <Content />
         </div>
       </div>
       <SpeedInsights />

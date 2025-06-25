@@ -1,0 +1,149 @@
+/* ========================================================
+LAYOUT
+======================================================== */
+
+
+.content-wrap {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding: 28px;
+}
+
+.content {
+    padding: 28px;
+}
+
+
+/* ========================================================
+CARD
+======================================================== */
+
+.card {
+    background-color: hsl(0, 0%, 100%, .02);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid hsl(0, 0%, 100%, .02);
+    flex: 1;
+}
+
+.card.p4 {
+    padding: 4px;
+}
+
+.card.p16 {
+    padding: 16px;
+}
+
+/* ========================================================
+TYPOGRAPHY
+======================================================== */
+
+.small-heading {
+    color: #818181;
+    font-size: 12.5px;
+    font-variation-settings: 'wght' 480;
+}
+
+.card-label {
+    font-size: 14px;
+    color: white;
+    font-variation-settings: 'wght' 500;
+}
+
+.label-tag {
+    padding: 8px 12px;
+    font-size: 10px;
+    color: #464646;
+    background-color: hsl(0, 0%, 100%, .01);
+    border: 1px solid hsl(0, 0%, 100%, .02);
+    border-radius: 3px;
+    transition: all ease .2s;
+    cursor: default;
+}
+
+.label-tag:hover {
+    color: #5E5E5E;
+    border-color: hsl(0, 0%, 100%, .03);
+    background-color: hsl(0, 0%, 100%, .02);
+}
+
+/* ========================================================
+CONTENT INFO CARD
+======================================================== */
+
+.info-card-metrics-wrap {
+  flex-wrap: wrap;  
+}
+
+.info-card-metric {
+    width: calc(50% - 12px);
+    min-width: fit-content;
+    white-space: nowrap;
+}
+
+.info-label-tag-wrap {
+    height: 28px;
+}
+
+/* ========================================================
+STATUS
+======================================================== */
+
+.status-toggle {
+    height: 22px;
+    width: 46px;
+    border-radius: 50px;
+    background-color: #1DA53F;
+    padding: 3px;
+    position: relative;
+    z-index: 0;
+    box-shadow: inset 0px 0.5px 2px 2px rgba(0, 0, 0, 30%);
+    opacity: .8;
+    transform: opacity ease .2s, background-color .3s ease;
+}
+
+.status-toggle:hover {
+    opacity: 1;
+}
+
+.status-toggle-knob {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 3px;
+    aspect-ratio: 1;
+    z-index: 1;
+    border-radius: 50px;
+    background: linear-gradient(180deg, #D9D9D9 0%, #BDBDBD 100%);
+    box-shadow: 0px 0.875px 2px 0px rgba(0, 0, 0, 4%);
+    transition: transform ease .3s;
+}
+
+.toggle.inactive .status-toggle {
+    background-color: #878787;
+    opacity: .7;
+}
+
+.toggle.inactive .status-toggle:hover {
+    opacity: .9;
+}
+
+.toggle.inactive .status-toggle .status-toggle-knob {
+    transform: translateX(-24px);
+}
+
+.toggle {
+    font-size: 13px;
+    font-variation-settings: 'wght' 500;
+    color: #ccc;
+}
+
+.toggle p {
+    transition: color ease .3s;
+}
+
+.toggle.inactive {
+    color: #999999;
+}

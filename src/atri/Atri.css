@@ -1,0 +1,145 @@
+/* ========================================================
+CHATBOT
+======================================================== */
+
+.chat-bot-panel {
+    align-self: center;
+    justify-self: center;
+    width: 90%;
+    max-width: 800px;
+    justify-content: center;
+    height: 100%;
+}
+
+.chatbot-icon-wrap {
+    align-items: center;
+    transition: opacity .5s ease;
+}
+
+.chatbot-icon-wrap.fade {
+    opacity: 0;
+}
+
+.chatbot-icon-wrap p {
+    color: #4D4D4D;
+    font-size: 14px;
+    line-height: 1.3;
+    font-variation-settings: 'wght' 500;
+}
+
+/* ========================================================
+PROMPT SUGGESTIONS
+======================================================== */
+
+.prompt-suggestion-wrap {
+    flex-wrap: wrap;
+}
+
+.prompt-suggestion {
+    border: 1px solid hsl(0, 0%, 100%, .1);
+    padding: 12px;
+    border-radius: 50px;
+    font-size: 12.5px;
+    font-variation-settings: 'wght' 500;
+    color: #444444;
+}
+
+.prompt-suggestion:hover {
+    background-color: hsl(0, 0%, 100%, .03);
+    border-color: hsl(0, 0%, 100%, .01);
+    color: #787878;
+}
+
+/* ========================================================
+INPUT
+======================================================== */
+
+.atri-input-form {
+    width: 100%;
+    background-color: hsl(0, 0%, 75%, .04);
+    z-index: 0;
+    position: relative;
+    border-radius: 100px;
+    margin: 1px;
+    height: 50px;
+    padding: 7px;
+    transition: background-color ease .2s;
+}
+
+.atri-input-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    border-radius: inherit;
+    padding: 1px;
+    opacity: .2;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    transition: opacity .2s ease;
+}
+
+.button-main.chat-submit {
+    min-height: 34px;
+    min-width: 34px;
+}
+
+.atri-input {
+    flex: 1;
+    margin-left: 16px;
+    font-size: 14px;
+    color: white;
+    cursor: text;
+}
+
+.atri-input:focus {
+    caret-color: white;
+}
+
+.atri-input-form:hover,
+.atri-input-form.focused {
+    background-color: hsl(0, 0%, 75%, .06);
+}
+
+
+.atri-input-form:hover::before,
+.atri-input-form.focused::before {
+    opacity: .3;
+}
+
+
+
+/* ========================================================
+ANIMATON
+======================================================== */
+
+.chat-window {
+    transition: all ease .5s;
+}
+
+.chat-window.active {
+    flex: 1;
+}
+
+
+.message-window {
+    flex: 1;
+}
+
+
+
+/* ========================================================
+TAB HEADING
+======================================================== */
+.atri-tab-heading {
+    font-size: 20px;
+    font-variation-settings: 'wght' 450;
+    color: #FCFCFC;
+    width: 420px;
+    line-height: 1.3;
+}

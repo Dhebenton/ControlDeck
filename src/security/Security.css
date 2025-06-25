@@ -1,0 +1,9 @@
+.website-image {
+    border-radius: 6px;
+    opacity: .8;
+    width: 100%;
+    min-height: 450px;
+    aspect-ratio: 10/7;
+    object-fit: cover;
+    object-position: top;
+}

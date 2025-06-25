@@ -51,12 +51,30 @@ button {
   padding-bottom: 8px;
 }
 
+
+/* ========================================================
+  GRID
+======================================================== */
+
+.grid {
+  display: grid;
+}
+
+.g2by3 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+
 /* ========================================================
   FLEX
 ======================================================== */
 
 .flex {
   flex: 1;
+}
+
+.f-wrap {
+  flex-wrap: wrap;
 }
 
 .f-col {
@@ -132,8 +150,17 @@ button {
   justify-content: flex-start;
 }
 
+
 .a-f-e {
   align-items: flex-end;
+}
+
+.a-f-s {
+  align-items: flex-start;
+}
+
+.a-st {
+  align-items: stretch;
 }
 
 /* ========================================================

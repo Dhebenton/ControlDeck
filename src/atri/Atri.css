@@ -37,7 +37,7 @@ PROMPT SUGGESTIONS
 
 .prompt-suggestion {
     border: 1px solid hsl(0, 0%, 100%, .1);
-    padding: 12px;
+    padding: 12px 14px;
     border-radius: 50px;
     font-size: 12.5px;
     font-variation-settings: 'wght' 500;
@@ -142,4 +142,55 @@ TAB HEADING
     color: #FCFCFC;
     width: 420px;
     line-height: 1.3;
+}
+
+/* ========================================================
+ATRI SUMMARY
+======================================================== */
+
+.atri-summary {
+    padding: 17px;
+    background-color: hsl(0, 0%, 100%, .02);
+    border-radius: 10px;
+    z-index: 0;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    margin: 1px;
+    height: 100%;
+}
+
+.atri-summary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    border-radius: inherit;
+    padding: 1px;
+    opacity: .4;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    transition: opacity .2s ease;
+}
+
+.atri-summary-heading {
+    font-size: 12px;
+    font-variation-settings: 'wght' 550;
+    color: white;
+    margin-bottom: -2px;
+}
+
+.atri-summary-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fafafa;
+}
+
+.atri-summary > :last-child {
+    margin-top: 20px;
 }

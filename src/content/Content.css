@@ -26,15 +26,31 @@ CARD
     border-radius: 10px;
     border: 1px solid hsl(0, 0%, 100%, .02);
     flex: 1;
+    position: relative;
 }
 
-.card.p4 {
-    padding: 4px;
+.card.p8 {
+    padding: 8px;
 }
 
 .card.p16 {
     padding: 16px;
 }
+
+.card.img {
+    min-width: 400px;
+    min-height: 200px;
+    justify-content: center;
+}
+
+.card.mw-380 {
+    min-width: 380px;
+}
+
+.card.mw-500 {
+    min-width: 500px;
+}
+
 
 /* ========================================================
 TYPOGRAPHY
@@ -43,13 +59,17 @@ TYPOGRAPHY
 .small-heading {
     color: #818181;
     font-size: 12.5px;
-    font-variation-settings: 'wght' 480;
+    font-variation-settings: 'wght' 450;
 }
 
 .card-label {
     font-size: 14px;
     color: white;
     font-variation-settings: 'wght' 500;
+}
+
+.card-label.f-s16 {
+    font-size: 16px;
 }
 
 .label-tag {
@@ -69,6 +89,15 @@ TYPOGRAPHY
     background-color: hsl(0, 0%, 100%, .02);
 }
 
+.change-label {
+    color: #1DA33F;
+    font-size: 13px;
+}
+
+.change-label span {
+    color: #666666;
+}
+
 /* ========================================================
 CONTENT INFO CARD
 ======================================================== */
@@ -85,6 +114,16 @@ CONTENT INFO CARD
 
 .info-label-tag-wrap {
     height: 28px;
+}
+
+.website-image {
+    border-radius: 6px;
+    opacity: .7;
+    height: 97%;
+    width: 97%;
+    position: absolute;
+    object-fit: cover;
+    object-position: top;
 }
 
 /* ========================================================
@@ -146,4 +185,65 @@ STATUS
 
 .toggle.inactive {
     color: #999999;
+}
+
+
+
+/* ========================================================
+SMALL CHART
+======================================================== */
+
+.small-chart-wrap {
+    width: calc(50% - 20px);
+    min-width: 240px;
+    flex: 1;
+}
+
+.small-chart-wrap > :first-child {
+    width: 124px;
+}
+
+.small-chart {
+    height: 48px;
+    border-bottom: 1px solid hsl(0, 0%, 100%, .1);
+}
+
+
+
+
+/* ========================================================
+TOOLTIP
+======================================================== */
+
+.chart-tooltip {
+    padding: 10px 14px;
+    background-color: hsl(0, 0%, 9%, .7);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 4px;
+    border: 1px solid hsl(0, 0%, 100%, .1);
+}
+
+.tooltip-heading {
+    color: #818181;
+    font-size: 11px;
+    font-variation-settings: 'wght' 380;
+}
+
+.tooltip-key {
+    height: 6px;
+    width: 6px;
+    border-radius: 50px;
+    background-color: #E85A39;
+}
+
+.tool-tip-label {
+    font-size: 11.5px;
+    font-variation-settings: 'wght' 500;
+    color: white;
+    white-space: nowrap;
+}
+
+.tool-tip-label span {
+    padding-left: 2px;
 }

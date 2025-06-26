@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from "react";
-import ChatbotIcon from '../../assets/chatbot/messagebuble.svg';
+import ChatbotIcon from '../../assets/chatbot/chart.svg';
 import './../../Atri.css';
 import AtriInput from "./Components/AtriInput";
 import ChatBotMessages from "./Components/AtriMessages";
 import { getChatbotConfig } from './Components/chatbotConfig';
 
-function AtriChat({ type = "atriai" }) {
+function SitePerformance({ type = "sitePerformance" }) {
   const config = getChatbotConfig(type);
 
   const [formMove, setFormMove] = useState(false);
@@ -87,59 +87,60 @@ function AtriChat({ type = "atriai" }) {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const allPrompts = [
-    "How can I boost my site's speed in under 10 minutes?",
-    "What’s the best way to compress images without losing quality?",
-    "Explain Core Web Vitals like I'm five.",
-    "Why is my CLS score so high and how can I fix it?",
-    "What tools can I use to monitor site downtime?",
-    "How can I reduce initial server response time?",
-    "What’s the difference between First Contentful Paint and Largest Contentful Paint?",
-    "Should I use a CDN for a small site?",
-    "What’s the impact of unused JavaScript on performance?",
-    "Is lazy loading images still recommended in 2025?",
-    "How can I make my site feel faster without actual speed improvements?",
-    "What's the best strategy for reducing TTFB?",
-    "Which font formats load fastest on modern browsers?",
-    "What’s a good Lighthouse score to aim for realistically?",
-    "Why does my page load slower on mobile?",
-    "How do I detect third-party scripts slowing my site?",
-    "Can I cache API responses effectively with service workers?",
-    "How should I handle broken links at scale?",
-    "What's the easiest way to implement a dark mode toggle?",
-    "What metrics should I track for ecommerce conversion?",
-    "How do I remove unused CSS safely?",
-    "What causes layout shifts during load?",
-    "Should I prioritize desktop or mobile optimization first?",
-    "How do I defer offscreen images?",
-    "What's the trade-off between image quality and load speed?",
-    "Which analytics platform has the lowest performance impact?",
-    "What should I check after migrating to a new domain?",
-    "How do I stop bots from hammering my site?",
-    "How do I test my site on a slow 3G connection?",
-    "What causes a high bounce rate despite fast load times?",
-    "How do I A/B test layouts without hurting performance?",
-    "What’s the real user impact of third-party widgets?",
-    "Can custom fonts be optimized for better LCP?",
-    "How do I reduce DOM size on large content pages?",
-    "What are common performance mistakes in React apps?",
-    "What should I optimize first: JS, images, or fonts?",
-    "How do I diagnose memory leaks in the frontend?",
-    "Is server-side rendering worth it for SEO and speed?",
-    "What’s the difference between lazy load and preloading?",
-    "Can hosting alone impact performance scores?",
-    "What are the signs of bad cumulative layout shift?",
-    "How do I audit performance without using Lighthouse?",
-    "Should I inline critical CSS or keep it external?",
-    "What's the simplest caching setup for static assets?",
-    "What causes LCP to jump randomly across sessions?",
-    "How do I make my dashboard feel more responsive?",
-    "Which performance metrics matter most for UX?",
-    "Why is my Google PageSpeed score inconsistent?",
-    "How do I troubleshoot long main-thread tasks?",
-    "How should I structure scripts for optimal load order?",
-    "Can I still use jQuery without tanking performance?"
-  ];
+    const allPrompts = [
+    "Why is my website loading slowly today?",
+    "What’s causing high Time to First Byte (TTFB)?",
+    "How do I reduce server response time?",
+    "What are the top three speed issues on my site right now?",
+    "Is my largest contentful paint (LCP) too high?",
+    "What’s the easiest way to fix render-blocking resources?",
+    "Which JavaScript files are slowing me down?",
+    "Can you show a breakdown of load times by asset?",
+    "Why does my page score worse on mobile?",
+    "Are there unused CSS rules inflating my bundle?",
+    "How do I enable text compression?",
+    "What are the top causes of layout shift on my homepage?",
+    "Is my font loading method optimal?",
+    "Should I preload any specific assets?",
+    "How can I reduce DOM complexity on product pages?",
+    "What’s the impact of my third-party scripts?",
+    "Is image lazy loading working properly?",
+    "How much does my hero image affect performance?",
+    "Should I switch image formats to WebP or AVIF?",
+    "What’s the real difference between FCP and LCP?",
+    "How does my Core Web Vitals score look today?",
+    "Is there a memory leak in any frontend script?",
+    "How often is my cache invalidated?",
+    "What are the longest main-thread tasks right now?",
+    "Is my CDN configured correctly for asset delivery?",
+    "Are my resources compressed using Brotli or Gzip?",
+    "How do I eliminate unnecessary reflows during load?",
+    "What does my performance look like over a slow 3G connection?",
+    "Why is my site’s interactivity delayed after load?",
+    "Can you show me heatmaps of loading patterns?",
+    "Is the site responsive across all viewports?",
+    "How do I defer non-critical JavaScript?",
+    "Are service workers caching efficiently?",
+    "What’s causing the most JavaScript execution time?",
+    "Should I self-host or externally load fonts?",
+    "Can we reduce client-side re-renders?",
+    "Which images are unoptimized above the fold?",
+    "Is there excessive recursion in any scripts?",
+    "Why does the LCP fluctuate by session?",
+    "What’s my current Lighthouse score breakdown?",
+    "Are any analytics scripts degrading performance?",
+    "Is the page visually complete before interaction?",
+    "Do I have cumulative layout shift during interaction?",
+    "What’s the CPU usage during load spikes?",
+    "Can you highlight performance bottlenecks by section?",
+    "Should I switch to server-side rendering?",
+    "Do I need a different hosting provider for better speed?",
+    "Are my scripts executed in optimal order?",
+    "Can I safely delay third-party widget loading?",
+    "Is my HTML structure contributing to slow rendering?",
+    "Should I inline critical CSS or keep it external?"
+    ];
+
 
   const promptSuggestions = allPrompts.sort(() => 0.5 - Math.random()).slice(0, 4);
 
@@ -148,7 +149,7 @@ function AtriChat({ type = "atriai" }) {
       {!iconFadeOut && (
         <div className={`chatbot-icon-wrap ${iconFadeOutDelay ? 'fade' : ""} f-col g16`}>
           <img src={ChatbotIcon} />
-          <p>Ask me anything about <br />your site or dashboard</p>
+          <p>Ask Anything About Your <br />Site’s Speed and Stability</p>
         </div>
       )}
       <div className={`chat-window ${formMove ? 'active' : ''} f-col g24`}>
@@ -183,4 +184,4 @@ function AtriChat({ type = "atriai" }) {
   );
 }
 
-export default AtriChat;
+export default SitePerformance;

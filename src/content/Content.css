@@ -29,6 +29,10 @@ CARD
     position: relative;
 }
 
+.card.flex4 {
+    flex: 4;
+}
+
 .card.p8 {
     padding: 8px;
 }
@@ -47,8 +51,8 @@ CARD
     min-width: 380px;
 }
 
-.card.mw-500 {
-    min-width: 500px;
+.card.mw-440 {
+    min-width: 440px;
 }
 
 
@@ -306,4 +310,102 @@ tr > :last-child {
     background-color: #1DA53F;
     height: 100%;
     border-radius: 100px 10px 200px 100px;
+}
+
+
+
+/* ========================================================
+OVERVIEW CARD
+======================================================== */
+
+.overview-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.over-heading {
+    grid-column: span 3;
+    color: #818181;
+    font-size: 13px;
+    font-variation-settings: 'wght' 500;
+    padding-bottom: 12px;
+}
+
+.overview-card p {
+    white-space: wrap;
+}
+
+.overview-card {
+    padding: 18px;
+    border: 1px solid hsl(0, 0%, 100%, .04);
+    border-radius: 6px;
+    outline: 3px solid transparent;
+}
+
+.overview-heading {
+    font-size: 14px;
+    color: white;
+    padding-top: 12px;
+    font-variation-settings: 'wght' 500;
+}
+
+.overview-subheading {
+    color: #838386;
+    font-size: 13.5px;
+    line-height: 1.5;
+}
+
+.overview-card:hover {
+    background-color: hsl(11, 79%, 57%, .03);
+    border-color: #E85A39;
+    outline-color: hsl(11, 79%, 57%, .3);
+}
+
+.overview-card.blue:hover {
+    background-color: hsl(231, 79%, 58%, .03);
+    border-color: #3F59E9;
+    outline-color: hsl(231, 79%, 58%, .03);
+}
+
+.overview-card.purple:hover {
+    background-color: hsl(271, 91%, 65%, .03);
+    border-color: #A855F7;
+    outline-color: hsl(271, 91%, 65%, .3);
+}
+
+/* ========================================================
+SIDEPANEL
+======================================================== */
+
+.sidepanel-wrap {
+    min-width: 400px;
+    max-width: 400px;
+    height: 100%;
+    border-left: 1px solid hsl(0, 0%, 100%, .04);
+    background-color: hsl(0, 0%, 100%, .01);
+    display: flex;
+    flex-direction: column;
+    transition: all ease .5s;
+    align-items: flex-start;
+}
+
+.sidepanel-wrap.opening {
+    min-width: 0px;
+    max-width: 0px;
+}
+
+
+.sidepanel {
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    height: calc(100svh - 116px);
+    min-width: 400px;
+}
+
+
+.sidepanel-top-block {
+    font-size: 14px;
+    font-variation-settings: 'wght' 600;
+    color: #323232;
 }

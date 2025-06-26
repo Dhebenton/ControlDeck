@@ -1,90 +1,118 @@
 /* ========================================================
-CHATBOT
+CHATBOT PANEL
 ======================================================== */
-
 .chat-bot-panel {
-    align-self: center;
-    justify-self: center;
-    width: 90%;
-    max-width: 800px;
-    justify-content: center;
-    height: 100%;
+  align-self: center;
+  justify-self: center;
+  width: 90%;
+  max-width: 800px;
+  height: 100%;
+  justify-content: center;
 }
 
+/* ========================================================
+CHATBOT ICON
+======================================================== */
 .chatbot-icon-wrap {
-    align-items: center;
-    transition: opacity .5s ease;
+  align-items: center;
+  transition: opacity 0.5s ease;
 }
 
 .chatbot-icon-wrap.fade {
-    opacity: 0;
+  opacity: 0;
+}
+
+.sidepanel-atri-icon-wrap p,
+.chatbot-icon-wrap p {
+  color: #4D4D4D;
+  font-size: 14px;
+  line-height: 1.4;
+  font-variation-settings: 'wght' 500;
 }
 
 .chatbot-icon-wrap p {
-    color: #4D4D4D;
-    font-size: 14px;
-    line-height: 1.3;
-    font-variation-settings: 'wght' 500;
+    text-align: center;
 }
 
-
-
 /* ========================================================
-Messages
+MESSAGE CONTAINERS
 ======================================================== */
-
 .message-wrap {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .message-wrap.user {
-    align-items: flex-end;
-}
-
-.message {
-    font-size: 15px;
-    color: #FAFAFA;
-    font-variation-settings: 'wght' 450;
-}
-
-.message p {
-    line-height: 1.6;
+  align-items: flex-end;
 }
 
 .message-wrap.user .message {
-    padding: 10px 18px;
-    background-color: hsl(0, 0%, 100%, .05);
-    border-radius: 50px;
-    
+  padding: 10px 20px;
+  background-color: hsl(0, 0%, 100%, 0.05);
+  border-radius: 50px;
 }
 
 .message-wrap.user .message-button-wrap {
-    transition: opacity ease .2s;
-    opacity: 0;
+  transition: opacity 0.2s ease;
+  opacity: 0;
 }
 
 .message-wrap.user:hover .message-button-wrap {
-    opacity: 1;
+  opacity: 1;
+}
+
+/* ========================================================
+MESSAGE CONTENT
+======================================================== */
+.message,
+.message input {
+  font-size: 15px;
+  color: #FAFAFA;
+  font-variation-settings: 'wght' 450;
+}
+
+.message.message-form {
+  width: 100%;
+}
+
+.message input {
+  width: 100%;
+  padding: 3px 0;
+  cursor: text;
+}
+
+.message input:focus {
+  caret-color: white;
+}
+
+.message p {
+  line-height: 1.5;
 }
 
 .message li {
-    margin: 12px 0 0 20px;
+  margin: 12px 0 0 20px;
 }
 
 .message li:first-of-type {
   padding-top: 4px;
 }
 
+.message form {
+  position: relative;
+}
+
+.message form .button-main {
+  position: absolute;
+  bottom: -22px;
+  left: -20px;
+  transform: translateY(100%);
+}
 
 /* ========================================================
 LOADING ANIMATION
 ======================================================== */
-
-
-
 .loading-bubble {
   display: flex;
   gap: 6px;
@@ -95,10 +123,8 @@ LOADING ANIMATION
 }
 
 .dot {
-  max-width: 6px;
-  max-height: 6px;
-  min-width: 6px;
-  min-height: 6px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: white;
   animation: miniWave 1.2s infinite ease-in-out;
@@ -127,181 +153,218 @@ LOADING ANIMATION
   }
 }
 
-
-
 /* ========================================================
 PROMPT SUGGESTIONS
 ======================================================== */
-
 .prompt-suggestion-wrap {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
+  transition: opacity 0.3s ease;
+}
+
+.prompt-suggestion-wrap.fade-out {
+  opacity: 0;
 }
 
 .prompt-suggestion {
-    border: 1px solid hsl(0, 0%, 100%, .1);
-    padding: 12px 14px;
-    border-radius: 50px;
-    font-size: 12.5px;
-    font-variation-settings: 'wght' 500;
-    color: #444444;
+  border: 1px solid hsl(0, 0%, 100%, 0.1);
+  padding: 12px 14px;
+  border-radius: 50px;
+  font-size: 12.5px;
+  font-variation-settings: 'wght' 500;
+  color: #444444;
 }
 
 .prompt-suggestion:hover {
-    background-color: hsl(0, 0%, 100%, .03);
-    border-color: hsl(0, 0%, 100%, .01);
-    color: #787878;
+  background-color: hsl(0, 0%, 100%, 0.03);
+  border-color: hsl(0, 0%, 100%, 0.01);
+  color: #787878;
 }
 
 /* ========================================================
 INPUT
 ======================================================== */
-
 .atri-input-form {
-    width: 100%;
-    background-color: hsl(0, 0%, 75%, .04);
-    z-index: 0;
-    position: relative;
-    border-radius: 100px;
-    margin: 1px;
-    height: 50px;
-    padding: 7px;
-    transition: background-color ease .2s;
+  width: 100%;
+  height: 50px;
+  margin: 1px;
+  padding: 7px;
+  position: relative;
+  border-radius: 100px;
+  background-color: hsl(0, 0%, 75%, 0.04);
+  z-index: 0;
+  transition: background-color 0.2s ease;
 }
 
 .atri-input-form::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
-    border-radius: inherit;
-    padding: 1px;
-    opacity: .2;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: -1;
-    transition: opacity .2s ease;
-}
-
-.button-main.chat-submit {
-    min-height: 34px;
-    min-width: 34px;
-}
-
-.atri-input {
-    flex: 1;
-    margin-left: 16px;
-    font-size: 14px;
-    color: white;
-    cursor: text;
-}
-
-.atri-input:focus {
-    caret-color: white;
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+  opacity: 0.2;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  transition: opacity 0.2s ease;
 }
 
 .atri-input-form:hover,
 .atri-input-form.focused {
-    background-color: hsl(0, 0%, 75%, .06);
+  background-color: hsl(0, 0%, 75%, 0.06);
 }
-
 
 .atri-input-form:hover::before,
 .atri-input-form.focused::before {
-    opacity: .3;
+  opacity: 0.3;
 }
 
+.atri-input {
+  flex: 1;
+  margin-left: 16px;
+  font-size: 14px;
+  color: white;
+  cursor: text;
+}
 
+.atri-input:focus {
+  caret-color: white;
+}
+
+.button-main.chat-submit {
+  min-height: 34px;
+  min-width: 34px;
+}
 
 /* ========================================================
-ANIMATON
+ANIMATION & TRANSITIONS
 ======================================================== */
-
 .chat-window {
-    transition: all ease .5s;
+  transition: all 0.5s ease;
 }
 
 .chat-window.active {
-    flex: 1;
+  flex: 1;
 }
 
-
 .message-window {
-    flex: 1;
+  flex: 1;
 }
 
 .chat-window .button-main {
-    opacity: .6;
+  opacity: 0.6;
 }
 
-.chat-window.active .button-main{
-    opacity: 1;
+.chat-window.active .button-main {
+  opacity: 1;
 }
-
-
 
 /* ========================================================
-TAB HEADING
+TAB HEADINGS
 ======================================================== */
 .atri-tab-heading {
-    font-size: 20px;
-    font-variation-settings: 'wght' 450;
-    color: #FCFCFC;
-    width: 420px;
-    line-height: 1.3;
+  font-size: 20px;
+  font-variation-settings: 'wght' 450;
+  color: #FCFCFC;
+  width: 420px;
+  line-height: 1.3;
 }
 
 /* ========================================================
-ATRI SUMMARY
+ATRI SUMMARY BLOCK
 ======================================================== */
-
 .atri-summary {
-    padding: 17px;
-    background-color: hsl(0, 0%, 100%, .02);
-    border-radius: 10px;
-    z-index: 0;
-    justify-content: space-between;
-    height: 100%;
-    position: relative;
-    margin: 1px;
-    height: 100%;
+  padding: 17px;
+  margin: 1px;
+  height: 100%;
+  background-color: hsl(0, 0%, 100%, 0.02);
+  border-radius: 10px;
+  position: relative;
+  justify-content: space-between;
+  z-index: 0;
 }
 
 .atri-summary::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
-    border-radius: inherit;
-    padding: 1px;
-    opacity: .4;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: -1;
-    transition: opacity .2s ease;
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+  opacity: 0.4;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  transition: opacity 0.2s ease;
 }
 
 .atri-summary-heading {
-    font-size: 12px;
-    font-variation-settings: 'wght' 550;
-    color: white;
-    margin-bottom: -2px;
+  font-size: 12px;
+  font-variation-settings: 'wght' 550;
+  color: white;
+  margin-bottom: -2px;
 }
 
 .atri-summary-text {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #fafafa;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #FAFAFA;
 }
 
 .atri-summary > :last-child {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
+/* ========================================================
+BUTTON ANIMATION
+======================================================== */
+.transparent-button.animation {
+  position: relative;
+}
+
+.transparent-button.animation > :last-child {
+  position: absolute;
+  opacity: 0;
+}
+
+.transparent-button.animation.active > :last-child {
+  opacity: 1;
+}
+
+.transparent-button.animation.active > :first-child {
+  opacity: 0;
+}
+
+
+
+/* ========================================================
+SIDEPANEL
+======================================================== */
+
+.sidepanel .atri-input-form {
+  height: 44px;
+  padding: 4px;
+}
+
+.sidepanel .atri-input {
+  margin-left: 12px;
+  font-size: 13px;
+}
+
+.atri-sidepanel-message-window {
+  position: relative;
+}
+
+.sidepanel-atri-icon-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  align-items: center;
+}
+
+.sidepanel-atri-icon-wrap p {
+  text-align: center;
+}

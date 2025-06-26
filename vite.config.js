@@ -3,13 +3,16 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Required for root-relative paths on Vercel
+  base: '/',
   build: {
-    outDir: 'dist', // Vercel auto-detects this
+    outDir: 'dist',
   },
   server: {
     fs: {
-      strict: true
-    }
-  }
+      strict: true,
+    },
+    proxy: {
+      '/api': 'http://localhost:3001',
+    },
+  },
 });

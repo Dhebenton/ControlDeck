@@ -52,6 +52,10 @@ button {
 }
 
 
+.flip-h {
+  transform: scaleX(-1);
+}
+
 /* ========================================================
   GRID
 ======================================================== */
@@ -71,6 +75,18 @@ button {
 
 .flex {
   flex: 1;
+}
+
+.flex3 {
+  flex: 3;
+}
+
+.flex4 {
+  flex: 4;
+}
+
+.flex5 {
+  flex: 5;
 }
 
 .f-wrap {
@@ -234,6 +250,10 @@ button img {
 
 .button-main.circle {
   border-radius: 50px;
+}
+
+.button-main.small {
+  font-size: 13px;
 }
 
 /* ========================================================

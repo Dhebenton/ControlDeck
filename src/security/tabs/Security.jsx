@@ -16,7 +16,7 @@ import SecurityScoreSpeedometre from '../components/SecurityScoreSpeedometre'
 import AtriSummary from '../../atri/components/AtriSummary'
 import RecentEventsTable from '../components/RecentEventsTable'
 
-function Security({}) {
+function Security({ handleSidePanel, handleAtriPanel }) {
     const { state, set } = useUndoState()
     const panelTab = state.panelTab
 
@@ -41,7 +41,7 @@ function Security({}) {
             <div className="f-row spread">
                 <p className="atri-tab-heading">All systems secure. No threats detected. SSL valid. 2FA active. 1 cert expires in 26 days.</p>
                 <div className="f-row g4">
-                    <button className="transparent-button">
+                    <button className="transparent-button" onClick={handleSidePanel}>
                         <img src={AtriIcon} />
                     </button>
                     <button className="transparent-button">
@@ -62,7 +62,7 @@ function Security({}) {
                             <div className='info-card-metrics-wrap top f-row spread g20 p-b8'>
                                 <div className='f-row g20'>
                                     <div className={`toggle ${autoScan ? '' : 'inactive'} f-row g12`}>
-                                        <button className='status-toggle' onClick={handleAutoScan}>
+                                        <button className='status-toggle' onClick={() => {handleAutoScan(), handleAtriPanel()}}>
                                             <div className='status-toggle-knob'></div>
                                         </button>
                                         <p>Auto Scan</p>
@@ -154,7 +154,7 @@ function Security({}) {
                     </div>
                 </div>
                 <div className="f-row f-wrap a-st g24">
-                    <div className='flex f-col g24'>
+                    <div className='flex5 f-col g24'>
                         <div className='card indicator' onClick={() => set({ ...state, panelTab: 'SSL/TLS' })}>
                             <div className='f-row spread'>
                                 <p className="card-label">SSL</p>
@@ -207,7 +207,7 @@ function Security({}) {
                             </div>
                         </div>
                     </div>
-                    <div className="card f-col g36 mw-500">
+                    <div className="card flex4 f-col g36 mw-440">
                         <p className="card-label">Security Score</p>
                         <div className='flex f-col g52'>
                             <SecurityScoreSpeedometre score={76} />
@@ -215,7 +215,7 @@ function Security({}) {
                         </div>
                     </div>
                 </div>
-                <div className="card f-col g36 mw-500">
+                <div className="card f-col g36">
                         <p className="card-label">Recent Security Events</p>
                         <RecentEventsTable />
                     </div>

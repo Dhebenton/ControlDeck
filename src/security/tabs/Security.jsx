@@ -14,6 +14,7 @@ import useUndo from 'use-undo'
 import { useUndoState } from '../../UndoContent'
 import SecurityScoreSpeedometre from '../components/SecurityScoreSpeedometre'
 import AtriSummary from '../../atri/components/AtriSummary'
+import RecentEventsTable from '../components/RecentEventsTable'
 
 function Security({}) {
     const { state, set } = useUndoState()
@@ -213,14 +214,11 @@ function Security({}) {
                             <AtriSummary />
                         </div>
                     </div>
-                    <div className="card f-col g36 mw-500">
-                        <p className="card-label">Security Score</p>
-                        <div className='flex f-col g52'>
-                            <SecurityScoreSpeedometre score={76} />
-                            <AtriSummary />
-                        </div>
-                    </div>
                 </div>
+                <div className="card f-col g36 mw-500">
+                        <p className="card-label">Recent Security Events</p>
+                        <RecentEventsTable />
+                    </div>
             </div>
         </div>
     )
